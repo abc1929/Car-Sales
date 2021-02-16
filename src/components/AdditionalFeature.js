@@ -1,4 +1,5 @@
 import React from "react";
+import { addFeature } from "../actions/featureActions";
 
 const AdditionalFeature = (props) => {
    return (
@@ -6,9 +7,7 @@ const AdditionalFeature = (props) => {
          {/* Add an onClick that will let you add a feature to your car */}
          <button
             className="button"
-            onClick={() =>
-               props.dispatch({ type: "ADD_FEATURE", payload: props.itemid })
-            }
+            onClick={() => props.dispatch(addFeature(props.itemid))}
          >
             Add
          </button>
