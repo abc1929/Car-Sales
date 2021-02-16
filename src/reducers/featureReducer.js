@@ -18,7 +18,7 @@ export const initialState = {
 };
 
 export const featureReducer = (state = initialState, action) => {
-   const addFeature = (id) => {
+   const addedFeature = (id) => {
       // remove the feature from additional feature
       // add it to car.features
       // return the new state
@@ -37,7 +37,7 @@ export const featureReducer = (state = initialState, action) => {
       };
    };
 
-   const removeFeature = (id) => {
+   const removedFeature = (id) => {
       // Inverse of the above
       const newAdditionalFeatures = state.additionalFeatures.concat(
          state.car.features.filter((i) => i.id === id)
@@ -55,10 +55,10 @@ export const featureReducer = (state = initialState, action) => {
 
    switch (action.type) {
       case "ADD_FEATURE":
-         return addFeature(action.payload);
+         return addedFeature(action.payload);
 
       case "REMOVE_FEATURE":
-         return removeFeature(action.payload);
+         return removedFeature(action.payload);
 
       default:
          return state;
